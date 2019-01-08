@@ -176,7 +176,7 @@ public class MainActivity extends BaseTest {
 	public void assertActExpect(BigInteger act,BigInteger expec) {
 		info("Actual: "+act);
 		info("Expected: "+expec);
-		Assert.assertTrue(act==expec);
+		Assert.assertTrue(act.equals(expec));
 	}
 
 	public String getTextFromFirstEle(List<WebElement> element) throws InterruptedException {
