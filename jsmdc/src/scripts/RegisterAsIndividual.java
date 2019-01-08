@@ -287,7 +287,9 @@ public class RegisterAsIndividual extends MainActivity {
 		info("Mobile No: "+PropertyFileRead.getProperty("otpNtsendInvalidmobile"));
 		clickOnElement(objReg.sendOTPbtn);
 		info("Click on SEND OTP Button.");
+		if(isAlertPresent()) {
 		asserAlert("alertOtpSent");
+		}
 		String otpS=otp();
 		sendKey(objReg.otp, otpS);
 		sendKey(objReg.userName, PropertyFileRead.getProperty("NewUser"));
