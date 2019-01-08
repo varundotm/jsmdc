@@ -21,5 +21,6 @@
 	<classpathentry kind="lib" path="jar/org.json.jar"/>
 	<classpathentry kind="lib" path="jar/testng-6.10.jar"/>
 	<classpathentry kind="lib" path="jar/jcommander-1.48.jar"/>
+	<classpathentry kind="lib" path="jar/com.mysql.jdbc_5.1.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
