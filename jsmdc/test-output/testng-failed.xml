@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="scripts.CartOperTest">
+        <methods>
+          <include name="verifyMobile"/>
+          <include name="failScreenShot"/>
+          <include name="closeCon"/>
+          <include name="checkReviewBookingBackward"/>
+          <include name="verifyPrice"/>
+          <include name="checkalternateMobileBackward"/>
+          <include name="forgotPasswordwithInvalidOTP"/>
+          <include name="setup"/>
+          <include name="forgotPasswordwithInvaliddata"/>
+          <include name="checkBookFormBackward" invocation-numbers="0"/>
+          <include name="forgotPasswordwithWrongOTP"/>
+          <include name="verifygst"/>
+          <include name="yvalidateUsernameAlready"/>
+          <include name="xvalidateMobileAlready"/>
+        </methods>
+      </class> <!-- scripts.CartOperTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
