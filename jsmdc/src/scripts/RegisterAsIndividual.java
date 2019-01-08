@@ -290,6 +290,11 @@ public class RegisterAsIndividual extends MainActivity {
 		if(isAlertPresent()) {
 		asserAlert("alertOtpSent");
 		}
+		pass();
+	}
+	@Test(priority=18)
+	void zfillValidData() throws InterruptedException, IOException {
+		start("Fill the data");
 		String otpS=otp();
 		sendKey(objReg.otp, otpS);
 		sendKey(objReg.userName, PropertyFileRead.getProperty("NewUser"));
