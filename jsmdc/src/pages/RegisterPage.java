@@ -1,7 +1,6 @@
 package pages;
 
 import java.math.BigInteger;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -183,5 +182,4 @@ public class RegisterPage {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", navigateToRegister);
 		navigateToRegister.click();
 	}
-
 }

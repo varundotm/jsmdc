@@ -3,7 +3,6 @@ package scripts;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Set;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -13,7 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import generic.ExcelData;
 import generic.PropertyFileRead;
 import pages.HomePage;
@@ -700,5 +698,4 @@ public class ConsumerModel extends Login{
 					break;}
 		}	
 	}
-
 }

@@ -1,7 +1,6 @@
 package pages;
 
 import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -149,8 +148,6 @@ public class HomePage  {
 
 	@FindBy(xpath="//*[@id=\"main-blocks-cart\"]/div[1]/div[5]/a/i")
 	public WebElement editBtn;
-
-
 
 	public HomePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);		

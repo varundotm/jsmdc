@@ -2,12 +2,9 @@ package scripts;
 
 import java.io.IOException;
 import java.math.BigInteger;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import com.relevantcodes.extentreports.LogStatus;
-
 import generic.MainActivity;
 import generic.PropertyFileRead;
 import pages.RegisterPage;

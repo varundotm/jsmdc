@@ -2,10 +2,8 @@ package scripts;
 
 import org.testng.annotations.Test;
 import java.io.IOException;
-
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
-
 import generic.ExcelData;
 import pages.CartPage;
 import pages.HomePage;
@@ -350,7 +348,6 @@ public class CartOperTest extends Payment{
 		paymentPrice();
 		pass();
 	}
-
 	@Test(priority=146)
 	void creditCncl() throws InterruptedException {
 		start("Credit card cancel");
@@ -368,7 +365,6 @@ public class CartOperTest extends Payment{
 		checkStatus();
 		addressCheck();
 		pass();
-
 	}
 	@Test(priority=148)
 	void goHome() throws InterruptedException {

@@ -7,7 +7,6 @@ import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -21,11 +20,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-
 import generic.PropertyFileRead;
 import generic.ScreenCapture;
 

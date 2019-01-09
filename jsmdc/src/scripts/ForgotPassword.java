@@ -1,10 +1,8 @@
 package scripts;
 
 import java.io.IOException;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import generic.PropertyFileRead;
 import pages.LoginPage;
 

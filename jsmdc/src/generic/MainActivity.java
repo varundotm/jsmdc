@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
@@ -19,17 +17,11 @@ import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-
 import com.relevantcodes.extentreports.LogStatus;
-
 import pages.HomePage;
 import pages.RegisterPage;
 import scripts.BaseTest;
-
-
-
 public class MainActivity extends BaseTest {
-
 	HomePage objHome;
 	RegisterPage objRegr;
 	String UserName,PassWord,MobileNumber;
