@@ -399,7 +399,6 @@ public class RegisterAsIndividual extends MainActivity {
 		asserAlert("alrtAlrdyMobile");
 		pass();
 	}
-
 	@Test(priority=19)
 	public void yavalidateUsernameAlready() throws InterruptedException, IOException {
 		start("Validate with already exist username");
@@ -438,5 +437,4 @@ public class RegisterAsIndividual extends MainActivity {
 		info("Click on login ");
 		pass();
 	}
-
 }

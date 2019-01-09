@@ -7,7 +7,6 @@ import java.util.Properties;
 
 
 public class PropertyFileRead {
-
 	public static String getProperty(String input) throws IOException {
 		String propertyFilePath=".//jsmdc.properties";
 		BufferedReader reader = new BufferedReader(new FileReader(propertyFilePath));

@@ -7,8 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
-	WebDriver driver;
-	
 	@FindBy(xpath="//*[@id='username']")
 	public	WebElement userName;
 	
@@ -56,7 +54,6 @@ public class LoginPage {
 	
 			
 	public LoginPage(WebDriver driver) {
-		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -64,6 +61,4 @@ public class LoginPage {
 		Thread.sleep(1000);
 		loginbtn.click();
 	}
-
-
 }

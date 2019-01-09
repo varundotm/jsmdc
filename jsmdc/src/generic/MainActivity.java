@@ -33,25 +33,19 @@ public class MainActivity extends BaseTest {
 	HomePage objHome;
 	RegisterPage objRegr;
 	String UserName,PassWord,MobileNumber;
-
 	static int cappedLimit,OTP;
-	
 	public void info(String string) {
 		logger.log(LogStatus.INFO, string);
 	}
-
 	public void pass() {
 		logger.log(LogStatus.PASS, "Test case passed");
 	}
-
 	public void fail() {
 		logger.log(LogStatus.FAIL, "Test case Failed");
 	}
-
 	public void start(String string) {
 		logger=extent.startTest(string);
 	}
-	
 	public void sendKey(WebElement element,String string) throws InterruptedException {
 		Thread.sleep(200);
 		element.clear();
@@ -62,7 +56,6 @@ public class MainActivity extends BaseTest {
 		}
 		Thread.sleep(1000);
 	}
-
 	public void comboInputBox(WebElement element,String string) throws InterruptedException {
 		element.click();
 		Thread.sleep(800);
@@ -73,7 +66,6 @@ public class MainActivity extends BaseTest {
 		Thread.sleep(300);
 		objHome.comboinput.sendKeys(Keys.ENTER);
 	}
-
 	public boolean isAlertPresent() throws InterruptedException{
 		try{
 			Thread.sleep(2000);
@@ -85,7 +77,6 @@ public class MainActivity extends BaseTest {
 		}catch(NoAlertPresentException ex){
 			return false;
 		}}
-
 	public void asserAlert(String string) throws InterruptedException, IOException {
 		String actual=getAlertText().trim();
 		String expected=PropertyFileRead.getProperty(string).trim();
@@ -93,13 +84,11 @@ public class MainActivity extends BaseTest {
 		info( "Expected: "+expected);
 		Assert.assertTrue(actual.equalsIgnoreCase(expected));
 	}
-
 	public void alerts(String message) {
 		JavascriptExecutor jse2 = (JavascriptExecutor)driver;
 		String script="alert(\""+message+"\")";	
 		jse2.executeScript(script);
 	}
-
 	public void comboBox(WebElement element,String string) throws InterruptedException {
 		element.clear();
 		Thread.sleep(800);
@@ -109,19 +98,16 @@ public class MainActivity extends BaseTest {
 		Thread.sleep(300);
 		element.sendKeys(Keys.ENTER);
 	}
-
 	public void checkBox(WebElement element) {
 		if(!element.isSelected()) {
 			element.click();
 		}
 	}
-
 	public void clickOnElement(WebElement element) throws InterruptedException {
 		Thread.sleep(2000);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		element.click();
 	}
-
 	public boolean isElementPresent(WebElement element) throws InterruptedException{
 		try{
 			Thread.sleep(1200);
@@ -145,14 +131,12 @@ public class MainActivity extends BaseTest {
 			return false;
 		}
 	}
-
-	public static void chechboxSelect(WebElement element1,WebElement element2) {
-		System.out.println(element1.getAttribute("class").contains("selected"));
-		if(!element1.getAttribute("class").contains("selected")) {
-			element2.click();
-		}
-	}
-
+	//	public static void chechboxSelect(WebElement element1,WebElement element2) {
+	//		System.out.println(element1.getAttribute("class").contains("selected"));
+	//		if(!element1.getAttribute("class").contains("selected")) {
+	//			element2.click();
+	//		}
+	//	}
 	public void clickdisplayedBtn(List<WebElement> element) throws InterruptedException {
 		Thread.sleep(3000);
 		for(WebElement ele: element) {
@@ -162,7 +146,6 @@ public class MainActivity extends BaseTest {
 			}
 		}
 	}
-
 	public void assertActExpect(String act,String expec) {
 		info("Actual: "+act);
 		info("Expected: "+expec);
@@ -193,16 +176,16 @@ public class MainActivity extends BaseTest {
 			firstele.click();}
 	}
 
-	public void sendTodisplayedTxt(List<WebElement> element,String input) throws InterruptedException {
-		Thread.sleep(3000);
-		for(WebElement ele: element) {
-			if(ele.isDisplayed()) {
-				ele.clear();
-				ele.sendKeys(input);
-				break;
-			}
-		}
-	}
+	//	public void sendTodisplayedTxt(List<WebElement> element,String input) throws InterruptedException {
+	//		Thread.sleep(3000);
+	//		for(WebElement ele: element) {
+	//			if(ele.isDisplayed()) {
+	//				ele.clear();
+	//				ele.sendKeys(input);
+	//				break;
+	//			}
+	//		}
+	//	}
 
 	public void sendTodisplayedCombo(List<WebElement> element,String string) throws InterruptedException {
 		Thread.sleep(3000);
@@ -218,42 +201,39 @@ public class MainActivity extends BaseTest {
 			}
 		}
 	}
-
-	
-
-	public void clrDisEle(List<WebElement> element) {
-		for(WebElement ele: element) {
-			if(ele.isDisplayed()) {
-				ele.clear();
-				break;
-			}
-		}
-	}
-
-	public void scrollTo(WebElement element) {
-		JavascriptExecutor jse2 = (JavascriptExecutor)driver;
-		jse2.executeScript("arguments[0].scrollIntoView(true);", element);
-	}
-
-	public void checkFrames() {
-		int i=0;
-		List<WebElement> frames=new ArrayList<>();
-		frames=driver.findElements(By.tagName("iframe"));
-		for(WebElement ele:frames) {
-			System.out.println(i+": "+ele.getAttribute("src"));
-			i++;		
-		}
-	}
-	//	public String getAlertText() throws InterruptedException {
-	//		new WebDriverWait(driver, 80)
-	//		.ignoring(NoAlertPresentException.class)
-	//		.until(ExpectedConditions.alertIsPresent());
-	//		Alert alert=driver.switchTo().alert();
-	//		String alertText=alert.getText();
-	//		Thread.sleep(2000);
-	//		alert.accept();
-	//		return alertText;
+	//	public void clrDisEle(List<WebElement> element) {
+	//		for(WebElement ele: element) {
+	//			if(ele.isDisplayed()) {
+	//				ele.clear();
+	//				break;
+	//			}
+	//		}
 	//	}
+
+	//	public void scrollTo(WebElement element) {
+	//		JavascriptExecutor jse2 = (JavascriptExecutor)driver;
+	//		jse2.executeScript("arguments[0].scrollIntoView(true);", element);
+	//	}
+
+	//	public void checkFrames() {
+	//		int i=0;
+	//		List<WebElement> frames=new ArrayList<>();
+	//		frames=driver.findElements(By.tagName("iframe"));
+	//		for(WebElement ele:frames) {
+	//			System.out.println(i+": "+ele.getAttribute("src"));
+	//			i++;		
+	//		}
+	//	}
+	//		public String getAlertText() throws InterruptedException {
+	//			new WebDriverWait(driver, 80)
+	//			.ignoring(NoAlertPresentException.class)
+	//			.until(ExpectedConditions.alertIsPresent());
+	//			Alert alert=driver.switchTo().alert();
+	//			String alertText=alert.getText();
+	//			Thread.sleep(2000);
+	//			alert.accept();
+	//			return alertText;
+	//		}
 
 	public String getAlertText() throws InterruptedException {
 		objHome=new HomePage(driver);
@@ -263,13 +243,11 @@ public class MainActivity extends BaseTest {
 		objHome.swtalrtAccept.click();
 		return alertText;
 	}
-
-	public String slectedValue(WebElement ele) {
-		Select select=new Select(ele);
-		String result =select.getFirstSelectedOption().getText();
-		return result;
-	}
-
+	//	public String slectedValue(WebElement ele) {
+	//		Select select=new Select(ele);
+	//		String result =select.getFirstSelectedOption().getText();
+	//		return result;
+	//	}
 	public String otp() throws InterruptedException {
 		Thread.sleep(3000);
 		LogEntries logEntries = driver.manage().logs().get(LogType.BROWSER);
@@ -282,57 +260,44 @@ public class MainActivity extends BaseTest {
 		String out=value[0].replaceAll("[^0-9]", "");
 		return new StringBuilder(out).reverse().toString();
 	}
-
 	public void clearLog() {
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		String script = "console.clear()";
 		js.executeScript(script);
 	}
-
 	public void setUserName(String UserName) {
 		this.UserName=UserName;
 	}
-
 	public void setPassword(String PassWord) {
 		this.PassWord=PassWord;
 	}
-
 	public void setMobileNo(String MobileNumber) {
 		this.MobileNumber=MobileNumber;
 	}
-
 	public void setOTP(int OTP) {
 		MainActivity.OTP=OTP;
 	}
-
 	public void setCappedlimit(int cappedLimit) {
 		MainActivity.cappedLimit=cappedLimit;
 	}
-
 	public int getCappedlimit() {
 		return cappedLimit;
 	}
-
 	public String getUserName() {
 		return UserName;
 	}
-
 	public String getPassword() {
 		return PassWord;
 	}
-
 	public String getMobileNo() {
 		return MobileNumber;
 	}
-
 	public int getOTP() {
 		return OTP;
 	}
 	void testingDb() throws InterruptedException {
 		getfromDB("Automation");
 	}
-
-
 	public void getfromDB(String string) throws InterruptedException {
 		Thread.sleep(1000);
 		try{  
@@ -346,13 +311,11 @@ public class MainActivity extends BaseTest {
 			con.close();  
 		}catch(Exception e){ System.out.println(e);}  
 	}
-
 	public ArrayList<WebElement> getAllOptions(WebElement element){
 		Select select = new Select(element);
 		ArrayList<WebElement> allOptions = (ArrayList<WebElement>) select.getOptions();
 		return allOptions ;
 	}
-
 	public Set<String> findDuplicates(List<WebElement> listContainingDuplicates)
 	{ 
 		final Set<String> setToReturn = new HashSet<String>(); 
@@ -366,6 +329,4 @@ public class MainActivity extends BaseTest {
 		}
 		return setToReturn;
 	}
-	
-
 }

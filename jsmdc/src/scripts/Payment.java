@@ -175,7 +175,6 @@ public class Payment extends ConsumerModel {
 		addressCheck();
 		home();
 		pass();
-
 	}
 //	@Test(priority=87,dataProvider="linit")
 //	void checkCreditCardFail(String vehicle,String cap,String NoOfvehicle) throws InterruptedException, IOException {
@@ -189,5 +188,4 @@ public class Payment extends ConsumerModel {
 		Object[][] data=ExcelData.getTableArray(".\\data\\BookingForm.xls", "limited", 3);
 		return data;
 	}
-
 }

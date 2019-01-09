@@ -9,8 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage  {
 
-	WebDriver driver;
-
 	@FindBy(xpath="//*[@class='swal-text']")
 	public WebElement swtalrtText;
 
@@ -155,7 +153,6 @@ public class HomePage  {
 
 
 	public HomePage(WebDriver driver) {
-		this.driver=driver;
 		PageFactory.initElements(driver, this);		
 	}
 	double gstval;
@@ -168,6 +165,4 @@ public class HomePage  {
 		//System.out.println("Get home gst: "+gstval);
 		return gstval;
 	}
-
-
 }

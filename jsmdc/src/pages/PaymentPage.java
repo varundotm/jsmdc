@@ -8,9 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class PaymentPage {
-	WebDriver driver;
 
-	
 	@FindBy(xpath="//*[@id=\"DDC\"]/table/tbody/tr[6]/td[2]/b/span")
 	public WebElement onlinePayPrice;
 	
@@ -48,7 +46,6 @@ public class PaymentPage {
 	public WebElement creditCard;
 	
 	public PaymentPage(WebDriver driver) {
-		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 }

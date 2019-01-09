@@ -17,9 +17,7 @@ public class ForgotPassword extends RegisterAsIndividual {
 		info("Mobile number: "+getMobileNo());
 		clickOnElement(objLP.forgotPasswordSendOtpBtn); 
 		info("Click on SEND OTP button.");
-
 	}
-
 	@Test(priority=20)
 	public void navigateToForgotPwd() throws InterruptedException {
 		start("Navigate to Forgot Password");
@@ -37,7 +35,6 @@ public class ForgotPassword extends RegisterAsIndividual {
 		asserAlert("alrtusername");
 		pass();
 	}
-
 	@Test(priority=22)
 	public void forgotPasswordwithoutNum() throws InterruptedException, IOException {
 		start("forgotPassword without mobile number test");
@@ -48,7 +45,6 @@ public class ForgotPassword extends RegisterAsIndividual {
 		asserAlert("alertFPwdMob");
 		pass();
 	}
-
 	@Test(priority=23)
 	public void forgotPasswordwithInvalidMobile() throws InterruptedException, IOException {
 		start("forgot Password with Invalid Mobile test");
@@ -88,7 +84,6 @@ public class ForgotPassword extends RegisterAsIndividual {
 		asserAlert("alertOtpFP");		
 		pass();
 	}
-
 	@Test(priority=27)
 	public void forgotPasswordwithInvalidOTP() throws InterruptedException, IOException {
 		start("forgot Password with Invalid OTP");
@@ -179,7 +174,4 @@ public class ForgotPassword extends RegisterAsIndividual {
 		Assert.assertTrue(objLP.assertLoginPage.getText().equals("LOGIN"));	
 		pass();
 	}
-
-
-
 }

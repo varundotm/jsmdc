@@ -376,7 +376,4 @@ public class CartOperTest extends Payment{
 		home();
 		pass();
 	}
-
-
-
 }

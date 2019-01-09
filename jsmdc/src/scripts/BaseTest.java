@@ -29,15 +29,10 @@ import com.relevantcodes.extentreports.LogStatus;
 import generic.PropertyFileRead;
 import generic.ScreenCapture;
 
-
 public class BaseTest {
-
-	
 	public static WebDriver driver;
 	public ExtentReports extent;
 	public ExtentTest logger;
-
-
 	//	public static void main(String[] args) throws ClassNotFoundException {
 	//        TestNG test = new TestNG();
 	//         test.setTestClasses(new Class[] { Payment.class });
@@ -64,7 +59,6 @@ public class BaseTest {
 		responseCode=con.getResponseCode();
 		if(responseCode>400) {
 			//info(PropertyFileRead.getProperty("URL")+" is down!! :(");
-
 		}else {
 			if(browser.equalsIgnoreCase("chrome")) {
 				System.setProperty("webdriver.chrome.driver", ".\\driver\\chromedriver.exe");
@@ -80,7 +74,6 @@ public class BaseTest {
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 			driver.get(PropertyFileRead.getProperty("URL"));
 			driver.manage().window().maximize();
-
 		}
 		con.disconnect();
 	}
@@ -89,21 +82,19 @@ public class BaseTest {
 		if(result.getStatus() == ITestResult.FAILURE){
 			logger.log(LogStatus.FAIL, "Test Case Failed is "+result.getName());
 			logger.log(LogStatus.FAIL, "Test Case Failed is "+result.getThrowable());
-		}else if(result.getStatus() == ITestResult.SKIP){
-			logger.log(LogStatus.SKIP, "Test Case Skipped is "+result.getName());
-		}
-		// ending test
-		//endTest(logger) : It ends the current test and prepares to create HTML report
-		extent.endTest(logger);
-		if(ITestResult.FAILURE==result.getStatus()){
 			try{
 				String filePath=".//screenshot//SN"+LocalDateTime.now()+".png";
 				ScreenCapture.takeSnapShot(driver, filePath);
 			}catch(Exception e) {
 				System.out.println(e);
 			}
+		}else if(result.getStatus() == ITestResult.SKIP){
+			logger.log(LogStatus.SKIP, "Test Case Skipped is "+result.getName());
 		}
-	}
+		// ending test
+		//endTest(logger) : It ends the current test and prepares to create HTML report
+		extent.endTest(logger);
+		}
 	@AfterTest
 	public void closeCon() throws InterruptedException {
 		Thread.sleep(2000);
@@ -112,7 +103,4 @@ public class BaseTest {
 		Thread.sleep(2000);
 		driver.quit();
 	}
-
-
-
 }

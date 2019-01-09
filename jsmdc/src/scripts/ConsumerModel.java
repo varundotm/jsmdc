@@ -32,7 +32,6 @@ public class ConsumerModel extends Login{
 		pass();
 	}
 	//------------------Test Start----------------
-
 	@Test(priority=47)
 	void validateLocationTypoHead() throws InterruptedException {
 		start("Validate the location typo head");
@@ -42,7 +41,6 @@ public class ConsumerModel extends Login{
 		//assert map navigation
 		pass();
 	}
-
 	@Test(priority=47)
 	void validateWithoutDistrict() throws InterruptedException, IOException {
 		start("Validate Buy Now without choosing district");
@@ -70,7 +68,6 @@ public class ConsumerModel extends Login{
 		asserAlert("alertQtyBN");
 		pass();
 	}
-
 	@Test(priority=50)
 	public void validateDistrict() {
 		start("Validate District values");
@@ -86,7 +83,6 @@ public class ConsumerModel extends Login{
 		}
 		pass();
 	}
-
 	@Test(priority=51)
 	public void validateStockyard() throws InterruptedException {
 		start("Validate Stockyard values");
@@ -116,8 +112,6 @@ public class ConsumerModel extends Login{
 		vali_stock();
 		pass();
 	}
-
-
 	protected void vali_stock() throws InterruptedException {
 		Thread.sleep(3000);
 		String beforeSelectSYAS=objHM.availableStock.getText();
@@ -141,8 +135,6 @@ public class ConsumerModel extends Login{
 		String afterSelectSYPrice=objHM.unitPrice.getText();
 		info("Unit price After Select Stockyard: "+afterSelectSYPrice);
 	}
-
-
 	@Test(priority=53,dataProvider="vehicle")
 	public void valdtBookingForm(String vehicle,String cap,String NoOfvehicle) throws InterruptedException, IOException  {
 		start("Validate No of vehicle and total CFT ");
@@ -173,8 +165,6 @@ public class ConsumerModel extends Login{
 		info("Expected total quantity: "+expecTotalQTY);
 		Assert.assertEquals(actTotalQty, expecTotalQTY);
 	}
-
-
 	@Test(priority=54)
 	void dValidatePrice(){
 		start("Validate Total Price");
@@ -203,8 +193,6 @@ public class ConsumerModel extends Login{
 		Assert.assertEquals(actualGst, expecGst);
 		Assert.assertEquals(actualPayableprice, expecPayable);
 	}
-
-
 	@Test(priority=54)
 	void exeedUserlimit() throws InterruptedException, IOException {
 		start("Validate the user capability");
@@ -225,8 +213,6 @@ public class ConsumerModel extends Login{
 			Assert.assertTrue(false);
 		}
 	}
-
-
 	@Test(priority=54,dependsOnMethods="exeedUserlimit")
 	void zReset() {
 		//unitPriceset=0;
@@ -263,9 +249,7 @@ public class ConsumerModel extends Login{
 		navigateRB();
 		pass();
 	}
-
 	protected void navigateRB() throws InterruptedException {
-
 		info("Click on Buy Now");
 		clickOnElement(objHM.buynowBtn);
 		if(isSwtalertPresent()){
@@ -277,8 +261,6 @@ public class ConsumerModel extends Login{
 			Assert.assertTrue(objHM.reviewBookingbtn.isDisplayed());
 		}
 	}
-
-
 	@Test(priority=57)
 	void validateRBWithoutLocation() throws InterruptedException, IOException {
 		start("Validate Review booking without enter location");
@@ -291,7 +273,6 @@ public class ConsumerModel extends Login{
 		info("Click on Review booking");
 		asserAlert("alertAddressRB");
 	}
-
 	@Test(priority=58)
 	void validateRBWithoutAltnatMobile() throws InterruptedException, IOException {
 		start("Validate Review booking without Alternate mobile number");
@@ -306,7 +287,6 @@ public class ConsumerModel extends Login{
 		info("Click on Review booking");
 		asserAlert("alertPhoneRB");
 	}
-
 	@Test(priority=59)
 	void validateRBInvalidAltnatMobile() throws InterruptedException, IOException {
 		start("Validate Review booking with Invalid Alternate mobile number");
@@ -325,7 +305,6 @@ public class ConsumerModel extends Login{
 		info("Click on Review booking");
 		asserAlert("alertinvalidMobileRB");
 	}
-
 	@Test(priority=60)
 	void validateRBWithValidData() throws InterruptedException, IOException {
 		start("Validate Review booking with Valid data");
@@ -345,8 +324,6 @@ public class ConsumerModel extends Login{
 		info("Navigate to Confirm oreder and Pay");
 		Assert.assertTrue(objHM.confirmPayBtn.isDisplayed());
 	}
-
-
 	@Test(priority=61)
 	void validateStockYardinCP() {
 		start("Validate Stockyard in Confirm page");
@@ -359,7 +336,6 @@ public class ConsumerModel extends Login{
 		info("Expected Stockyard: "+getStockyard());
 		Assert.assertEquals(objHM.stockyardCP.getText(), getStockyard());
 	}
-
 	@Test(priority=62)
 	void validateUnitPriceinCP() {
 		start("Validate Unit price in Confirm page");
@@ -373,7 +349,6 @@ public class ConsumerModel extends Login{
 		info("Expected Unit price: "+getUnitPrice()/100);
 		Assert.assertEquals(unitprice,getUnitPrice()/100);
 	}
-
 	@Test(priority=63)
 	void validateTotalQtyinCP() {
 		start("Validate Total Quantity in Confirm page");
@@ -386,7 +361,6 @@ public class ConsumerModel extends Login{
 		info("Expected Total Quantity: "+getTotalQty());
 		Assert.assertEquals(Integer.parseInt(objHM.quantityCP.getText()), getTotalQty());
 	}
-
 	@Test(priority=64)
 	void validateTotalPriceinCP() {
 		start("Validate Total Price in Confirm page");
@@ -399,7 +373,6 @@ public class ConsumerModel extends Login{
 		info("Expected Total Price: "+getTotalPrice());
 		Assert.assertEquals(Double.parseDouble(objHM.priceCP.getText()), getTotalPrice());
 	}
-
 	@Test(priority=65)
 	void validateGstinCP() {
 		start("Validate GST value in Confirm page");
@@ -424,7 +397,6 @@ public class ConsumerModel extends Login{
 		info("Expected Total payable value: "+getTotalPayabl());
 		Assert.assertEquals(Double.parseDouble(objHM.totalPricePayCP.getText()), getTotalPayabl());
 	}
-
 	@Test(priority=67)
 	void checkReviewBookingBackward() {
 		start("Navigate to Backward to Check existing destination address");
@@ -564,11 +536,7 @@ public class ConsumerModel extends Login{
 		Thread.sleep(2000);
 		Assert.assertTrue(objHM.confirmPayBtn.isDisplayed());
 	}
-
-
-
 	//-------------------Test End-------------------
-
 
 	//-------------------Supported methods----------
 	public void checkTotlcft(String vehicle, int NoOfvehicle,int cap,String readOrWrite) throws InterruptedException, IOException {
@@ -636,7 +604,6 @@ public class ConsumerModel extends Login{
 			Assert.assertTrue(expcTotalCft==actuTotalcft);
 		}
 	}
-
 	public double crct(String input) {
 		double output;
 		if(input.contains("Rs")) {

@@ -178,7 +178,6 @@ public class RegisterPage {
 		new MainActivity().setCappedlimit(data.getInt("CappedLimit"));
 		//setGSTNO(data.getString("GST"));
 	}
-
 	public void clickRegisterbtn() throws InterruptedException {
 		Thread.sleep(2000);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", navigateToRegister);

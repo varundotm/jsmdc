@@ -10,7 +10,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.OutputType;
 
 public class ScreenCapture {
-
 	public static void takeSnapShot(WebDriver driver, String fileWithPath) throws IOException {
 		fileWithPath=fileWithPath.replaceAll(":", "");
 		File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
