@@ -6,7 +6,6 @@
     <classes>
       <class name="scripts.CartOperTest">
         <methods>
-          <include name="verifyMobile"/>
           <include name="failScreenShot"/>
           <include name="closeCon"/>
           <include name="checkReviewBookingBackward"/>
@@ -14,12 +13,13 @@
           <include name="checkalternateMobileBackward"/>
           <include name="forgotPasswordwithInvalidOTP"/>
           <include name="setup"/>
+          <include name="yavalidateUsernameAlready"/>
           <include name="forgotPasswordwithInvaliddata"/>
           <include name="checkBookFormBackward" invocation-numbers="0"/>
           <include name="forgotPasswordwithWrongOTP"/>
           <include name="verifygst"/>
-          <include name="yvalidateUsernameAlready"/>
           <include name="xvalidateMobileAlready"/>
+          <include name="checkAddress"/>
         </methods>
       </class> <!-- scripts.CartOperTest -->
     </classes>
